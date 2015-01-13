@@ -1,6 +1,8 @@
 
 class CounterHash
 
+  @VERSION: '0.0.2'
+
   constructor: (dir) ->
     @values = {}
 

@@ -25,6 +25,10 @@
         h.values.should.be.an.instanceOf(Object);
         return done();
       });
+      it('should have a VERSION', function(done) {
+        CounterHash.VERSION.should.eql('0.0.2');
+        return done();
+      });
       it('should implement methods: increment, decrement, and sum', function(done) {
         var h;
         h = new CounterHash();

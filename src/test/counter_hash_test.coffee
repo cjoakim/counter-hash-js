@@ -20,6 +20,10 @@ describe 'CounterHash', ->
       h.values.should.be.an.instanceOf(Object)
       done()
 
+    it 'should have a VERSION', (done) ->
+      CounterHash.VERSION.should.eql('0.0.2')
+      done()
+
     it 'should implement methods: increment, decrement, and sum', (done) ->
       h = new CounterHash()
       h.value('a').should.eql(0)
