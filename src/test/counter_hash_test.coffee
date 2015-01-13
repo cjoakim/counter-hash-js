@@ -21,7 +21,7 @@ describe 'CounterHash', ->
       done()
 
     it 'should have a VERSION', (done) ->
-      CounterHash.VERSION.should.eql('0.0.2')
+      CounterHash.VERSION.should.eql('0.1.1')
       done()
 
     it 'should implement methods: increment, decrement, and sum', (done) ->

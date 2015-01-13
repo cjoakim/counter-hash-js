@@ -50,10 +50,12 @@ h.value('x')  -> 93
 
 h.sorted_keys() -> [ 'a', 'b', 'q', 'x', 'z' ]
 
-CounterHash.VERSION  -> '0.0.2'
+CounterHash.VERSION  -> '0.1.1'
 ```
 
 ### Release History
 
+* 2015-01-13   v0.1.1  Docs updated.
+* 2015-01-13   v0.1.0  Initial working version.
 * 2015-01-13   v0.0.2  alpha 2
 * 2015-01-13   v0.0.1  alpha 1
