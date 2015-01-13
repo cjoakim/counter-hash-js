@@ -1,6 +1,6 @@
 {
   "name":    "counter-hash-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Node.js library implementing a simple CounterHash class, for incrementing and decrementing keys.",
   "homepage": "https://github.com/cjoakim/counter-hash-js",
   "main": "lib/counter_hash.js",
