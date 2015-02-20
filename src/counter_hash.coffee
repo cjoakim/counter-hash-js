@@ -1,7 +1,7 @@
 
 class CounterHash
 
-  @VERSION: '0.1.1'
+  @VERSION: '0.1.2'
 
   constructor: (dir) ->
     @values = {}
@@ -57,6 +57,14 @@ class CounterHash
     keys = Object.getOwnPropertyNames(@values)
     for key in keys
       list.push(key)
+    list.sort()
+
+  sorted_tuples: ->
+    list = []
+    keys = this.sorted_keys()
+    for key in keys
+      val = this.value(key)
+      list.push([key, val])
     list.sort()
 
 

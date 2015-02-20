@@ -21,7 +21,7 @@ describe 'CounterHash', ->
       done()
 
     it 'should have a VERSION', (done) ->
-      CounterHash.VERSION.should.eql('0.1.1')
+      CounterHash.VERSION.should.eql('0.1.2')
       done()
 
     it 'should implement methods: increment, decrement, and sum', (done) ->
@@ -82,4 +82,14 @@ describe 'CounterHash', ->
       h.decrement('q')
       h.increment('b')
       h.sorted_keys().should.eql([ 'a', 'b', 'q', 'z' ])
+      done()
+
+    it 'should implement method: sorted_tuples', (done) ->
+      h = new CounterHash()
+      h.increment('z')
+      h.increment('a')
+      h.decrement('q')
+      h.increment('b')
+      h.increment('a')
+      h.sorted_tuples().should.eql([ ['a', 2], ['b', 1],['q', -1], ['z', 1] ])
       done()

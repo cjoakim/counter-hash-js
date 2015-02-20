@@ -26,7 +26,7 @@
         return done();
       });
       it('should have a VERSION', function(done) {
-        CounterHash.VERSION.should.eql('0.1.1');
+        CounterHash.VERSION.should.eql('0.1.2');
         return done();
       });
       it('should implement methods: increment, decrement, and sum', function(done) {
@@ -79,7 +79,7 @@
         obj.z.should.eql(1);
         return done();
       });
-      return it('should implement method: sorted_keys', function(done) {
+      it('should implement method: sorted_keys', function(done) {
         var h;
         h = new CounterHash();
         h.sorted_keys().should.eql([]);
@@ -88,6 +88,17 @@
         h.decrement('q');
         h.increment('b');
         h.sorted_keys().should.eql(['a', 'b', 'q', 'z']);
+        return done();
+      });
+      return it('should implement method: sorted_tuples', function(done) {
+        var h;
+        h = new CounterHash();
+        h.increment('z');
+        h.increment('a');
+        h.decrement('q');
+        h.increment('b');
+        h.increment('a');
+        h.sorted_tuples().should.eql([['a', 2], ['b', 1], ['q', -1], ['z', 1]]);
         return done();
       });
     });
