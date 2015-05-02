@@ -26,7 +26,7 @@ CounterHash  = require("counter-hash-js").CounterHash
 Note: this library is now implemented in TypeScript, but these examples are in CoffeeScript.
 For users of TypeScript, see the declaration file for this library at:
 
-https://github.com/cjoakim/counter-hash/blob/master/lib/counter-hash.d.ts
+https://github.com/cjoakim/counter-hash-js/blob/master/lib/counter-hash-js.d.ts
 
 #### CounterHash
 
@@ -57,6 +57,10 @@ h.sorted_keys() -> [ 'a', 'b', 'q', 'x', 'z' ]
 h.sorted_tuples() -> [ ['a', 2], ['b', 1],['q', -1], ['z', 1] ]
 
 CounterHash.VERSION  -> '0.2.0'
+```
+
+### Test Results
+```
 ```
 
 ### Release History

@@ -1,7 +1,14 @@
 /// <reference path="../typedefs/node.d.ts" />
 export declare class CounterHash {
     static VERSION: string;
-    data: string[];
+    values: Object;
     constructor();
-    is_empty(): boolean;
+    value(key: string): number;
+    sum(): number;
+    increment(key: string): void;
+    decrement(key: string): void;
+    add(key: string, n: number): void;
+    subtract(key: string, n: number): void;
+    sorted_keys(): string[];
+    private populated(s);
 }

@@ -9,24 +9,98 @@ import os = require('os');
 export class CounterHash {
 
     // class variables
-    static VERSION : string = '0.3.0';
+    static VERSION : string = '0.2.0';
 
     // instance variables
-    data : string[] = [];
+    values : Object = {};
 
     constructor() {
 
-
     }
 
-    is_empty() : boolean {
+    value(key : string) : number {
 
-        if (this.data.length === 0) {
-            return true;
+        var n = this.values[key];
+        if (this.populated(n)) {
+            return n;
         }
         else {
-            return false;
+          return 0;
         }
     }
 
+    sum() : number {
+
+      var sum = 0;
+      var keys = Object.getOwnPropertyNames(this.values);
+      for (var i = 0; i < keys.length; i++) {
+        var key = keys[i];
+        var val = this.value(key);
+        sum = sum + val;
+      }
+      return sum;
+    }
+
+    increment(key : string) : void {
+
+      if (this.populated(key)) {
+        var val = this.value(key);
+        this.values[key] = val + 1;
+      }
+    }
+
+    decrement(key : string) : void {
+
+      if (this.populated(key)) {
+        var val = this.value(key);
+        this.values[key] = val - 1;
+      }
+    }
+
+    add(key : string, n : number) : void {
+
+      if (this.populated(key)) {
+        if (this.populated(n)) {
+          var val = this.value(key);
+          this.values[key] = val + n;
+        }
+      }
+      else {
+        if (this.populated(n)) {
+          this.values[key] = n;
+        }
+      }
+    }
+
+    subtract(key : string, n : number) : void {
+
+      if (this.populated(key)) {
+        if (this.populated(n)) {
+          var val = this.value(key);
+          this.values[key] = val - n;
+        }
+      }
+      else {
+        if (this.populated(n)) {
+          this.values[key] = 0 - n;
+        }
+      }
+    }
+
+    sorted_keys() : string[] {
+
+      var keys = Object.getOwnPropertyNames(this.values);
+      return keys.sort();
+    }
+
+    private populated(s : any) {
+
+        if (s === undefined) {
+            return false;
+        }
+        if (s === null) {
+            return false;
+        }
+        return true;
+    }
 }
