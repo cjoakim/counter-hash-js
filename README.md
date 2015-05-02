@@ -91,7 +91,7 @@ Lines        : 100% ( 54/54 )
 
 ### Release History
 
-* 2015-05-02   v0.2.0  Implemented in TypeScript, with counter-hash-js.d.ts.  Removed 'sorted_tuples()'.
+* 2015-05-02   v0.2.0  Implemented in TypeScript; added file 'counter-hash-js.d.ts'.
 * 2015-02-20   v0.1.2  Added method 'sorted_tuples()'.
 * 2015-01-13   v0.1.1  Docs updated.
 * 2015-01-13   v0.1.0  Initial working version.

@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "A Node.js library implementing a simple CounterHash class, for incrementing and decrementing keys.",
   "homepage": "https://github.com/cjoakim/counter-hash-js",
-  "main": "lib/counter_hash.js",
+  "main": "lib/counter-hash-js.js",
   "author": {
     "name": "Chris Joakim",
     "url":  "http://www.chrisjoakim.com"
