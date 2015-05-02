@@ -65,11 +65,6 @@ export class CounterHash {
           this.values[key] = val + n;
         }
       }
-      else {
-        if (this.populated(n)) {
-          this.values[key] = n;
-        }
-      }
     }
 
     subtract(key : string, n : number) : void {
@@ -80,17 +75,24 @@ export class CounterHash {
           this.values[key] = val - n;
         }
       }
-      else {
-        if (this.populated(n)) {
-          this.values[key] = 0 - n;
-        }
-      }
     }
 
     sorted_keys() : string[] {
 
       var keys = Object.getOwnPropertyNames(this.values);
       return keys.sort();
+    }
+
+    sorted_tuples() : Object[] {
+
+      var array = [];
+      var keys = Object.getOwnPropertyNames(this.values);
+      for (var i = 0; i < keys.length; i++) {
+        var key = keys[i];
+        var val = this.value(key);
+        array.push([key, val]);
+      }
+      return array.sort();
     }
 
     private populated(s : any) {

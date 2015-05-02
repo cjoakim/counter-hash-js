@@ -9,7 +9,7 @@
 
   sb = require('sb-js');
 
-  CounterHash = require('../lib/counter_hash.js').CounterHash;
+  CounterHash = require('../lib/counter-hash-js.js').CounterHash;
 
   describe('CounterHash', function() {
     before(function(done) {
@@ -26,7 +26,7 @@
         return done();
       });
       it('should have a VERSION', function(done) {
-        CounterHash.VERSION.should.eql('0.1.2');
+        CounterHash.VERSION.should.eql('0.2.0');
         return done();
       });
       it('should implement methods: increment, decrement, and sum', function(done) {
@@ -59,8 +59,14 @@
         h.increment('b');
         h.value('a').should.eql(42);
         h.sum().should.eql(43);
+        h.add('a', null);
+        h.add(null, 4);
+        h.sum().should.eql(43);
         h.subtract('a', 10);
         h.value('a').should.eql(32);
+        h.sum().should.eql(33);
+        h.subtract('a', null);
+        h.subtract(null, 4);
         h.sum().should.eql(33);
         return done();
       });

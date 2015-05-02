@@ -3,7 +3,7 @@ assert      = require("assert")
 should      = require('should')
 fs          = require('fs')
 sb          = require('sb-js')
-CounterHash = require('../lib/counter_hash.js').CounterHash
+CounterHash = require('../lib/counter-hash-js.js').CounterHash
 
 describe 'CounterHash', ->
 
@@ -21,7 +21,7 @@ describe 'CounterHash', ->
       done()
 
     it 'should have a VERSION', (done) ->
-      CounterHash.VERSION.should.eql('0.1.2')
+      CounterHash.VERSION.should.eql('0.2.0')
       done()
 
     it 'should implement methods: increment, decrement, and sum', (done) ->
@@ -55,11 +55,20 @@ describe 'CounterHash', ->
       h.value('a').should.eql(42)
       h.sum().should.eql(43)
 
+      h.add('a', null)
+      h.add(null, 4)
+      h.sum().should.eql(43)
+
       h.subtract('a', 10)
       h.value('a').should.eql(32)
       h.sum().should.eql(33)
+
+      h.subtract('a', null)
+      h.subtract(null, 4)
+      h.sum().should.eql(33)
+
       done()
-      
+
     it 'should implement method: values', (done) ->
       h = new CounterHash()
       h.increment('z')

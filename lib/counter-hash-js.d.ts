@@ -10,5 +10,6 @@ export declare class CounterHash {
     add(key: string, n: number): void;
     subtract(key: string, n: number): void;
     sorted_keys(): string[];
+    sorted_tuples(): Object[];
     private populated(s);
 }
