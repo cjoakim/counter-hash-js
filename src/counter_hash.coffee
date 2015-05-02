@@ -12,7 +12,7 @@ class CounterHash
       n
     else
       0
-      
+
   sum: ->
     total = 0
     keys = Object.getOwnPropertyNames(@values)
@@ -26,7 +26,7 @@ class CounterHash
       if n
         @values[key] = n + 1
       else
-        @values[key] = 1     
+        @values[key] = 1
 
   decrement: (key) ->
     if key
@@ -42,7 +42,7 @@ class CounterHash
       if n
         @values[key] = n + x
       else
-        @values[key] = x 
+        @values[key] = x
 
   subtract: (key, x) ->
     if key and x

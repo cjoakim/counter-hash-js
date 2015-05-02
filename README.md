@@ -2,10 +2,11 @@
 
 ### Purpose
 
-A Node.js library implementing a simple CounterHash class, for incrementing and decrementing keys.
+A Node.js library implementing a simple CounterHash class, for incrementing and
+decrementing keys.
 
 Often it is useful to traverse some data structure, accumulating conters in the process.
-Class CounterHash provides functions to increment, decrement, add, subtract, and obtain 
+Class CounterHash provides functions to increment, decrement, add, subtract, and obtain
 the sum, values, and sorted-keys of the hash.
 
 ### Examples
@@ -22,7 +23,10 @@ Require counter-hash-js in your code:
 CounterHash  = require("counter-hash-js").CounterHash
 ```
 
-Note: this library is implemented with CoffeeScript, and these examples are also in CoffeeScript.
+Note: this library is now implemented in TypeScript, but these examples are in CoffeeScript.
+For users of TypeScript, see the declaration file for this library at:
+
+https://github.com/cjoakim/counter-hash/blob/master/lib/counter-hash.d.ts
 
 #### CounterHash
 
@@ -30,7 +34,7 @@ Methods value(key), increment(key), decrement(key), add(key, n), subtract(key, n
 sum(), sorted_keys(), and sorted_tuples() are available.
 
 
-``` 
+```
 h = new CounterHash()
 h.increment('a')
 h.increment('a')
@@ -52,11 +56,12 @@ h.sorted_keys() -> [ 'a', 'b', 'q', 'x', 'z' ]
 
 h.sorted_tuples() -> [ ['a', 2], ['b', 1],['q', -1], ['z', 1] ]
 
-CounterHash.VERSION  -> '0.1.2'
+CounterHash.VERSION  -> '0.2.0'
 ```
 
 ### Release History
 
+* 2015-05-02   v0.2.0  Implemented in TypeScript.
 * 2015-02-20   v0.1.2  Added method 'sorted_tuples()'.
 * 2015-01-13   v0.1.1  Docs updated.
 * 2015-01-13   v0.1.0  Initial working version.
